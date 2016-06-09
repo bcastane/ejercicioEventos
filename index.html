@@ -13,25 +13,37 @@
 </head>
 <body>
 
-<div class="section">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+<div class="click section" id="s1">
+<p> 1 .- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
 </div>
 
-<div class="section">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+<button class="click button close" id="b1">Aparece</button>
+
+<div class="click section" id="s2">
+<p>2.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
 
 </div>
 
-<div class="section">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+<button class="click button close" id="b2">Aparece</button>
+
+<div class="click section" id="s3">
+<p>3.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
 </div>
+
+<button class="click button close" id="b3">Aparece</button>
 
 
 <script>
-$(".section").on('click', function(){
+$(".click").on('click', function(){
+	tipo = $(this).attr('id').slice(0, -1);
 	$(this).toggleClass('close');
-	console.log(this);
-	console.log($(this));
+	if(tipo=="s"){
+		otro = "b";
+	}else{
+		otro = "s";
+	}
+	$("#"+otro+$(this).attr('id').substring(1)).removeClass('close');
+
 });
 
 
